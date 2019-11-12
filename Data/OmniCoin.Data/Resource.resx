@@ -1,0 +1,624 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="InitScript" xml:space="preserve">
+    <value>PRAGMA foreign_keys = off;
+BEGIN TRANSACTION;
+
+-- 表：Accounts
+CREATE TABLE IF NOT EXISTS Accounts (
+    Id          VARCHAR (64) NOT NULL
+                             PRIMARY KEY,
+    PrivateKey  VARCHAR (64),
+    PublicKey   VARCHAR (64),
+    Balance     INTEGER      NOT NULL
+                             DEFAULT 0,
+    IsDefault   BOOLEAN      NOT NULL
+                             DEFAULT 0,
+    WatchedOnly BOOLEAN      NOT NULL
+                             DEFAULT 0,
+    Timestamp   INTEGER      NOT NULL,
+    Tag         VARCHAR (64) 
+);
+
+
+-- 表：AddressBook
+CREATE TABLE IF NOT EXISTS AddressBook (
+    Id        INTEGER      NOT NULL
+                           PRIMARY KEY AUTOINCREMENT,
+    Address   VARCHAR (64) NOT NULL,
+    Tag       VARCHAR (64),
+    Timestamp INTEGER      NOT NULL
+);
+
+
+-- 表：Blacklist
+CREATE TABLE IF NOT EXISTS Blacklist (
+    Id        INTEGER      NOT NULL
+                           PRIMARY KEY AUTOINCREMENT,
+    Address   VARCHAR (50) NOT NULL,
+    Timestamp INTEGER      NOT NULL,
+    Expired   INTEGER
+);
+
+
+-- 表：Blocks
+CREATE TABLE IF NOT EXISTS Blocks (
+    Id                INTEGER      NOT NULL
+                                   PRIMARY KEY AUTOINCREMENT,
+    Hash              VARCHAR (64) NOT NULL,
+    Version           INT          NOT NULL
+                                   DEFAULT 1,
+    Height            INTEGER      NOT NULL,
+    PreviousBlockHash VARCHAR (64) NOT NULL,
+    Bits              INTEGER      NOT NULL,
+    Nonce             INTEGER      NOT NULL,
+    Timestamp         INTEGER      NOT NULL,
+    NextBlockHash     VARCHAR (64),
+    TotalAmount       INTEGER      NOT NULL
+                                   DEFAULT 0,
+    TotalFee          INTEGER      NOT NULL
+                                   DEFAULT 0,
+    GeneratorId 	  VARCHAR(64)  NULL, 
+	BlockSignature    TEXT         NOT NULL,
+	PayloadHash       VARCHAR(64)  NOT NULL,
+    IsDiscarded       BOOLEAN      NOT NULL
+                                   DEFAULT 0,
+    IsVerified        BOOLEAN      NOT NULL
+                                   DEFAULT 0
+);
+
+
+-- 表：InputList
+CREATE TABLE IF NOT EXISTS InputList (
+    Id                    INTEGER      NOT NULL
+                                       PRIMARY KEY AUTOINCREMENT,
+    TransactionHash       VARCHAR (64) NOT NULL,
+    OutputTransactionHash VARCHAR (64) NOT NULL,
+    OutputIndex           INT,
+    Size                  INT          NOT NULL,
+    Amount                INTEGER      NOT NULL
+                                       DEFAULT 0,
+    UnlockScript          TEXT,
+    AccountId             VARCHAR (64),
+    IsDiscarded           BOOLEAN      NOT NULL
+                                       DEFAULT 0,
+    BlockHash             VARCHAR (64) NOT NULL
+                                       DEFAULT ('') 
+);
+
+
+-- 表：OutputList
+CREATE TABLE IF NOT EXISTS OutputList (
+    Id              INTEGER      NOT NULL
+                                 PRIMARY KEY AUTOINCREMENT,
+    [Index]         INT          NOT NULL,
+    TransactionHash VARCHAR (64) NOT NULL,
+    ReceiverId      VARCHAR (64) NOT NULL,
+    Amount          INTEGER      NOT NULL
+                                 DEFAULT 0,
+    Size            INT          NOT NULL
+                                 DEFAULT 0,
+    LockScript      TEXT,
+    Spent           BOOLEAN      NOT NULL
+                                 DEFAULT 0,
+    IsDiscarded     BOOLEAN      NOT NULL
+                                 DEFAULT 0,
+    BlockHash       VARCHAR (64) NOT NULL
+                                 DEFAULT ('') 
+                                 DEFAULT 0
+);
+
+
+-- 表：PaymentRequests
+CREATE TABLE IF NOT EXISTS PaymentRequests (
+    Id        INTEGER       NOT NULL
+                            PRIMARY KEY AUTOINCREMENT,
+    AccountId VARCHAR (64)  NOT NULL,
+    Tag       VARCHAR (64),
+    Comment   VARCHAR (200),
+    Amount    INTEGER       NOT NULL
+                            DEFAULT 0,
+    Timestamp INTEGER       NOT NULL
+                            DEFAULT 0
+);
+
+
+-- 表：Peers
+CREATE TABLE IF NOT EXISTS Peers (
+    Id        INTEGER      NOT NULL
+                           PRIMARY KEY AUTOINCREMENT,
+    IP        VARCHAR (50) NOT NULL,
+    Port      INT          NOT NULL,
+    PingTime  INTEGER,
+    Timestamp INTEGER      NOT NULL
+);
+
+
+-- 表：Settings
+CREATE TABLE IF NOT EXISTS Settings (
+    Id             INTEGER      NOT NULL
+                                PRIMARY KEY AUTOINCREMENT,
+    Confirmations  INTEGER      NOT NULL
+                                DEFAULT 1,
+    FeePerKB       INTEGER      NOT NULL
+                                DEFAULT 1000,
+    Encrypt        BOOLEAN      NOT NULL
+                                DEFAULT 0,
+    PassCiphertext VARCHAR (64) 
+);
+
+
+-- 表：TransactionComments
+CREATE TABLE IF NOT EXISTS TransactionComments (
+    Id              INTEGER       NOT NULL
+                                  PRIMARY KEY AUTOINCREMENT,
+    TransactionHash VARCHAR (64)  NOT NULL,
+    OutputIndex     INT           NOT NULL
+                                  DEFAULT 0,
+    Comment         VARCHAR (200) NOT NULL,
+    Timestamp       INTEGER       NOT NULL
+                                  DEFAULT 0
+);
+
+
+-- 表：Transactions
+CREATE TABLE IF NOT EXISTS Transactions (
+    Id          INTEGER      NOT NULL
+                             PRIMARY KEY AUTOINCREMENT,
+    Hash        VARCHAR (64) NOT NULL,
+    BlockHash   VARCHAR (64),
+    Version     INT          NOT NULL
+                             DEFAULT 1,
+    Timestamp   INTEGER      NOT NULL,
+    LockTime    INTEGER      NOT NULL
+                             DEFAULT 0,
+    TotalInput  INTEGER      NOT NULL
+                             DEFAULT 0,
+    TotalOutput INTEGER      NOT NULL
+                             DEFAULT 0,
+    Size        INTEGER      NOT NULL
+                             DEFAULT 0,
+    Fee         INTEGER      NOT NULL
+                             DEFAULT 0,
+    IsDiscarded BOOLEAN      NOT NULL
+                             DEFAULT 0,
+	ExpiredTime INTEGER      NOT NULL
+                             DEFAULT 0
+);
+
+
+-- 表：MiningPool
+CREATE TABLE IF NOT EXISTS MiningPool(
+	Id			INTEGER		NOT NULL	PRIMARY KEY AUTOINCREMENT,
+	[NAME]		VARCHAR	(64) NOT NULL,
+	[PublicKey]	varchar (500) NOT NULL,
+	[Signature] varchar(500) Not Null
+);
+
+-- 表：UserSetting
+CREATE TABLE IF NOT EXISTS [UserSetting] (
+	[Id] integer NOT NULL PRIMARY KEY AUTOINCREMENT, 
+	[Type] integer NOT NULL DEFAULT 1, 
+	[Value] varchar(64) NOT NULL
+);
+
+
+-- 索引：Address
+CREATE UNIQUE INDEX IF NOT EXISTS Address ON AddressBook (
+    Address
+);
+
+
+-- 索引：BlockHash
+CREATE INDEX IF NOT EXISTS BlockHash ON Transactions (
+    BlockHash
+);
+
+CREATE INDEX IF NOT EXISTS Transactions_LockTime ON Transactions (
+    LockTime
+);
+
+-- 索引：Hash
+CREATE UNIQUE INDEX IF NOT EXISTS Hash ON Blocks (
+    Hash
+);
+
+
+-- 索引：Height
+CREATE INDEX IF NOT EXISTS Height ON Blocks (
+    Height
+);
+
+
+-- 索引：InputListAcountId
+CREATE INDEX IF NOT EXISTS InputListAcountId ON InputList (
+    AccountId
+);
+
+
+-- 索引：InputListIsDiscarded
+CREATE INDEX IF NOT EXISTS InputListIsDiscarded ON InputList (
+    IsDiscarded
+);
+
+
+-- 索引：InputListOutputTxIndex
+CREATE INDEX IF NOT EXISTS InputListOutputTxIndex ON InputList (
+    OutputTransactionHash,
+    OutputIndex
+);
+
+
+-- 索引：InputListUniqueIndex
+CREATE INDEX IF NOT EXISTS InputListUniqueIndex ON InputList (
+    TransactionHash
+);
+
+-- 索引：InputList_BlockHash
+CREATE INDEX IF NOT EXISTS InputList_BlockHash ON InputList (
+    BlockHash
+);
+
+-- 索引：IsDiscarded
+CREATE INDEX IF NOT EXISTS IsDiscarded ON Blocks (
+    IsDiscarded
+);
+
+
+-- 索引：IsVerified
+CREATE INDEX IF NOT EXISTS IsVerified ON Blocks (
+    IsVerified
+);
+
+
+-- 索引：OutputListIsDiscarded
+CREATE INDEX IF NOT EXISTS OutputListIsDiscarded ON OutputList (
+    IsDiscarded
+);
+
+
+-- 索引：OutputListReceiverId
+CREATE INDEX IF NOT EXISTS OutputListReceiverId ON OutputList (
+    ReceiverId
+);
+
+
+-- 索引：OutputListSpent
+CREATE INDEX IF NOT EXISTS OutputListSpent ON OutputList (
+    Spent
+);
+
+
+-- 索引：OutputListTxHash
+CREATE INDEX IF NOT EXISTS OutputListTxHash ON OutputList (
+    TransactionHash
+);
+
+
+-- 索引：OutputListUniqueIndex
+CREATE INDEX IF NOT EXISTS OutputListUniqueIndex ON OutputList (
+    "Index",
+    TransactionHash
+);
+
+-- 索引：OutputList_BlockHash
+CREATE INDEX IF NOT EXISTS OutputList_BlockHash ON OutputList (
+    BlockHash
+);
+
+-- 索引：Tag
+CREATE INDEX IF NOT EXISTS Tag ON AddressBook (
+    Tag
+);
+
+
+-- 索引：TxHash
+CREATE INDEX IF NOT EXISTS TxHash ON Transactions (
+    Hash
+);
+
+
+-- 索引：TxIsDiscarded
+CREATE INDEX IF NOT EXISTS TxIsDiscarded ON Transactions (
+    IsDiscarded
+);
+
+
+COMMIT TRANSACTION;
+PRAGMA foreign_keys = on;</value>
+  </data>
+  <data name="MainnetConnectionString" xml:space="preserve">
+    <value>Filename=./OmniCoin.db; Mode=ReadWriteCreate;Cache=Shared;</value>
+  </data>
+  <data name="Patch1Script" xml:space="preserve">
+    <value>PRAGMA foreign_keys = off;
+BEGIN TRANSACTION;
+
+CREATE TABLE sqlitestudio_temp_table1 AS SELECT *
+                                          FROM InputList;
+
+DROP TABLE InputList;
+
+CREATE TABLE InputList (
+    Id                    INTEGER      NOT NULL
+                                       PRIMARY KEY AUTOINCREMENT,
+    TransactionHash       VARCHAR (64) NOT NULL,
+    OutputTransactionHash VARCHAR (64) NOT NULL,
+    OutputIndex           INT,
+    Size                  INT          NOT NULL,
+    Amount                INTEGER      NOT NULL
+                                       DEFAULT 0,
+    UnlockScript          TEXT,
+    AccountId             VARCHAR (64),
+    IsDiscarded           BOOLEAN      NOT NULL
+                                       DEFAULT 0,
+    BlockHash             VARCHAR (64) NOT NULL
+                                       DEFAULT ('') 
+);
+
+INSERT INTO InputList (
+                          Id,
+                          TransactionHash,
+                          OutputTransactionHash,
+                          OutputIndex,
+                          Size,
+                          Amount,
+                          UnlockScript,
+                          AccountId,
+                          IsDiscarded
+                      )
+                      SELECT Id,
+                             TransactionHash,
+                             OutputTransactionHash,
+                             OutputIndex,
+                             Size,
+                             Amount,
+                             UnlockScript,
+                             AccountId,
+                             IsDiscarded
+                        FROM sqlitestudio_temp_table1;
+
+DROP TABLE sqlitestudio_temp_table1;
+
+CREATE INDEX InputListAcountId ON InputList (
+    AccountId
+);
+
+CREATE INDEX InputListIsDiscarded ON InputList (
+    IsDiscarded
+);
+
+CREATE INDEX InputListOutputTxIndex ON InputList (
+    OutputTransactionHash,
+    OutputIndex
+);
+
+CREATE INDEX InputListUniqueIndex ON InputList (
+    TransactionHash
+);
+
+CREATE INDEX InputList_BlockHash ON InputList (
+    BlockHash
+);
+
+
+CREATE TABLE sqlitestudio_temp_table2 AS SELECT *
+                                          FROM OutputList;
+
+DROP TABLE OutputList;
+
+CREATE TABLE OutputList (
+    Id              INTEGER      NOT NULL
+                                 PRIMARY KEY AUTOINCREMENT,
+    [Index]         INT          NOT NULL,
+    TransactionHash VARCHAR (64) NOT NULL,
+    ReceiverId      VARCHAR (64) NOT NULL,
+    Amount          INTEGER      NOT NULL
+                                 DEFAULT 0,
+    Size            INT          NOT NULL
+                                 DEFAULT 0,
+    LockScript      TEXT,
+    Spent           BOOLEAN      NOT NULL
+                                 DEFAULT 0,
+    IsDiscarded     BOOLEAN      NOT NULL
+                                 DEFAULT 0,
+    BlockHash       VARCHAR (64) NOT NULL
+                                 DEFAULT ('') 
+);
+
+INSERT INTO OutputList (
+                           Id,
+                           [Index],
+                           TransactionHash,
+                           ReceiverId,
+                           Amount,
+                           Size,
+                           LockScript,
+                           Spent,
+                           IsDiscarded
+                       )
+                       SELECT Id,
+                              "Index",
+                              TransactionHash,
+                              ReceiverId,
+                              Amount,
+                              Size,
+                              LockScript,
+                              Spent,
+                              IsDiscarded
+                         FROM sqlitestudio_temp_table2;
+
+DROP TABLE sqlitestudio_temp_table2;
+
+CREATE INDEX OutputListIsDiscarded ON OutputList (
+    IsDiscarded
+);
+
+CREATE INDEX OutputListReceiverId ON OutputList (
+    ReceiverId
+);
+
+CREATE INDEX OutputListSpent ON OutputList (
+    Spent
+);
+
+CREATE INDEX OutputListTxHash ON OutputList (
+    TransactionHash
+);
+
+CREATE INDEX OutputListUniqueIndex ON OutputList (
+    "Index",
+    TransactionHash
+);
+
+CREATE INDEX OutputList_BlockHash ON OutputList (
+    BlockHash
+);
+
+CREATE INDEX IF NOT EXISTS Transactions_LockTime ON Transactions (
+    LockTime
+);
+
+UPDATE InputList set BlockHash = (SELECT BlockHash FROM Transactions WHERE Hash = TransactionHash ORDER BY IsDiscarded LIMIT 1);
+
+UPDATE OutputList set BlockHash = (SELECT BlockHash FROM Transactions WHERE Hash = TransactionHash ORDER BY IsDiscarded LIMIT 1);
+
+COMMIT TRANSACTION;
+PRAGMA foreign_keys = on;</value>
+  </data>
+  <data name="Patch2Script" xml:space="preserve">
+    <value>UPDATE OutputList SET Spent = 1 WHERE Amount &lt;= 0</value>
+  </data>
+  <data name="Patch3Script" xml:space="preserve">
+    <value>DROP INDEX IF EXISTS PrivateKey;</value>
+  </data>
+  <data name="Patch4Script" xml:space="preserve">
+    <value>delete from InputList where BlockHash in (select Hash from Blocks where Height &gt;= 101016) and not exists (select Hash from Blocks where Hash = '051AEE33E5E512B6283D6F8A70517228E759A08A91C5D38B8C87CB58BC2C867F' and Height = 101017);
+delete from OutputList where BlockHash in (select Hash from Blocks where Height &gt;= 101016) and not exists (select Hash from Blocks where Hash = '051AEE33E5E512B6283D6F8A70517228E759A08A91C5D38B8C87CB58BC2C867F' and Height = 101017);
+delete from Transactions where BlockHash in (select Hash from Blocks where Height &gt;= 101016) and not exists (select Hash from Blocks where Hash = '051AEE33E5E512B6283D6F8A70517228E759A08A91C5D38B8C87CB58BC2C867F' and Height = 101017);
+delete from Blocks where Height &gt;= 101016 and not exists (select Hash from Blocks where Hash = '051AEE33E5E512B6283D6F8A70517228E759A08A91C5D38B8C87CB58BC2C867F' and Height = 101017);</value>
+  </data>
+  <data name="Patch5Script" xml:space="preserve">
+    <value>PRAGMA journal_mode=wal;</value>
+  </data>
+  <data name="TestnetConnectionString" xml:space="preserve">
+    <value>Filename=./OmniCoin_test.db; Mode=ReadWriteCreate;Cache=Shared;</value>
+  </data>
+</root>

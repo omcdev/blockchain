@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "OmniCoin.Tracker": {
+      "commandName": "Project",
+      "commandLineArgs": "-testnet"
+    }
+  }
+}

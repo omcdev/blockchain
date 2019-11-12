@@ -1,0 +1,11 @@
+{
+  "PoolConfig": {
+    "RabbitMqConnectString": "amqp://admin:admin@192.168.0.38:5672/",
+    "MySqlTestnetConnectString": "server=192.168.31.49;port=53306;user=MySqlDockerUser;password=1;database=omnicoin_pool_test;SslMode=none;",    
+    "RedisTestnetConnections": "192.168.31.49:6379,defaultDatabase=1,abortConnect=False",
+    "MySqlMainnetConnectString": "server=rm-3ns9338b87ln88635.mysql.rds.aliyuncs.com;port=3306;user=omnipool;password=F31P@y@2016;database=omnic_pool;SslMode=none;",
+    "RedisMainnetConnections": "r-3nsqqgy3zbcyzz35je.redis.rds.aliyuncs.com:6379,defaultDatabase=1,abortConnect=False",
+    "PoolMainPort": 58807,
+    "PoolTestPort": 58808
+  }
+}

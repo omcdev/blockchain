@@ -1,0 +1,10 @@
+{
+  "NodeConfig": {
+    "WalletNotify": "",
+    "LocalIp": "",
+    "P2PPortMainNet": 58801,
+    "P2PPortTestNet": 58802,
+    "RpcPortMainNet": 58803,
+    "RpcPortTestNet": 58804
+  }
+}

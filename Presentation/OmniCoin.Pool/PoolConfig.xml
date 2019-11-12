@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<PoolConfig>
+  <PoolAddress>47.75.251.9</PoolAddress>
+  <PoolKafkaGroupName>pooltest1</PoolKafkaGroupName>
+  <TcpMaxCount>800</TcpMaxCount>
+</PoolConfig>

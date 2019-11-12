@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EdjCase.JsonRpc.Client" Version="2.1.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\OmniCoin.MiningPool.Data\OmniCoin.MiningPool.Data.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.Consensus\OmniCoin.Consensus.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.MiningPool.Entities\OmniCoin.MiningPool.Entities.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.Tools\OmniCoin.Tools.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="OmniCoin.MiningPool.Business.conf.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JSONSchema="http://json.schemastore.org/cirrus" /></VisualStudio></ProjectExtensions>
+
+</Project>

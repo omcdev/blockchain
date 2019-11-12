@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "OmniCoin.Pool.Redis": {
+      "commandName": "Project",
+      "commandLineArgs": "-testnet"
+    }
+  }
+}

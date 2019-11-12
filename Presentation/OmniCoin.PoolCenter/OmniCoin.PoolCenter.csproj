@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CSRedisCore" Version="3.0.16" />
+    <PackageReference Include="EdjCase.JsonRpc.Client" Version="2.1.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Business\OmniCoin.MiningPool.Business\OmniCoin.MiningPool.Business.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.Consensus\OmniCoin.Consensus.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.DTO\OmniCoin.DTO.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.Framework\OmniCoin.Framework.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.Messages\OmniCoin.Messages.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.MiningPool.Shares\OmniCoin.MiningPool.Shares.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.Pool.Redis\OmniCoin.Pool.Redis.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.PoolMessages\OmniCoin.PoolMessages.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.RabbitMQ\OmniCoin.RabbitMQ.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.ShareModels\OmniCoin.ShareModels.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.Tools\OmniCoin.Tools.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="OmniCoin.PoolCenter.conf.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="poolcenterappsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

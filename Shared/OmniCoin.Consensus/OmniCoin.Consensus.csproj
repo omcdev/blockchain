@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Configurations>Debug;Release;Pro</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="POW.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OmniCoin.Entities\OmniCoin.Entities.csproj" />
+    <ProjectReference Include="..\OmniCoin.Messages\OmniCoin.Messages.csproj" />
+  </ItemGroup>
+
+</Project>

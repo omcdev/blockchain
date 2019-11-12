@@ -1,0 +1,10 @@
+{
+  "AwardSetting": {
+    "PoolType": "",
+    "NodeRpcMainnet": "http://192.168.0.36:58803/",
+    "NodeRpcTestnet": "http://192.168.31.56:58804/",
+    "PosCheckServiceUrlMainNet": "http://192.168.0.37:12323/",
+    "PosCheckServiceUrlTestNet": "http://192.168.31.56:12323/",
+    "SuperNodeAddress": "omnimHxTpx8GsfAf6ek8nikUuaGzv9Mwo9DrMg"
+  }
+}

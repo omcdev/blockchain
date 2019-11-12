@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "OmniCoin.Node": {
+      "commandName": "Project",
+      "commandLineArgs": "-testnet true e"
+    }
+  }
+}

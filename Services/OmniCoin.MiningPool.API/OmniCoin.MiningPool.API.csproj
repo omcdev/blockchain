@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <StartupObject>OmniCoin.MiningPool.API.Program</StartupObject>
+    <RuntimeIdentifiers>win10-x64</RuntimeIdentifiers>
+    <PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp2.1\OmniCoin.MiningPool.API.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+    <OutputPath>bin\Debug\netcoreapp2.1\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netcoreapp2.1\OmniCoin.MiningPool.API.xml</DocumentationFile>
+    <OutputPath>bin\Release\netcoreapp2.1\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EdjCase.JsonRpc.Router" Version="2.1.9" />
+    <PackageReference Include="FluentCache.Microsoft.Extensions.Caching.Redis" Version="4.0.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Business\OmniCoin.MiningPool.Business\OmniCoin.MiningPool.Business.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.Consensus\OmniCoin.Consensus.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.Framework\OmniCoin.Framework.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.MiningPool.Entities\OmniCoin.MiningPool.Entities.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.MiningPool.Shares\OmniCoin.MiningPool.Shares.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.Pool.Redis\OmniCoin.Pool.Redis.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.ShareModels\OmniCoin.ShareModels.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.Tools\OmniCoin.Tools.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Extensions.PlatformAbstractions">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.platformabstractions\1.1.0\lib\netstandard1.3\Microsoft.Extensions.PlatformAbstractions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="OmniCoin.MiningPool.API.conf.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

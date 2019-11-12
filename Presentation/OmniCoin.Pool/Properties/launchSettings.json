@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "OmniCoin.Pool": {
+      "commandName": "Project",
+      "commandLineArgs": "-testnet"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Configurations>Debug;Release;Pro</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Ready.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\OmniCoin.DataAgent\OmniCoin.DataAgent.csproj" />
+    <ProjectReference Include="..\..\Data\OmniCoin.Data\OmniCoin.Data.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.Consensus\OmniCoin.Consensus.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.DTO\OmniCoin.DTO.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.Entities\OmniCoin.Entities.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.Framework\OmniCoin.Framework.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.Messages\OmniCoin.Messages.csproj" />
+    <ProjectReference Include="..\..\Tools\OmniCoin.Update\OmniCoin.Update.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\newtonsoft.json\10.0.1\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

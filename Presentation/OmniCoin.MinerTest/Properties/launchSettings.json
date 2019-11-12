@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "OmniCoin.MinerTest": {
+      "commandName": "Project",
+      "commandLineArgs": "start"
+    }
+  }
+}

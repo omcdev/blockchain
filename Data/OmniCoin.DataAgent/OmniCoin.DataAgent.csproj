@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Configurations>Debug;Release;Pro</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="AsyncUdpEventArgs.cs" />
+    <Compile Remove="AsyncUdpState.cs" />
+    <Compile Remove="BlockPool.cs" />
+    <Compile Remove="BlockPoolItem.cs" />
+    <Compile Remove="CacheManager.cs" />
+    <Compile Remove="HotDataAccessLightDb.cs" />
+    <Compile Remove="P2PNode.cs" />
+    <Compile Remove="P2PSendMessage.cs" />
+    <Compile Remove="Resource.Designer.cs" />
+    <Compile Remove="TransactionPoolItem.cs" />
+    <Compile Remove="UtxoSet.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Resource.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\OmniCoin.Consensus\OmniCoin.Consensus.csproj" />
+    <ProjectReference Include="..\..\Shared\OmniCoin.Messages\OmniCoin.Messages.csproj" />
+    <ProjectReference Include="..\OmniCoin.Data\OmniCoin.Data.csproj" />
+  </ItemGroup>
+
+</Project>

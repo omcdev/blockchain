@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "OmniCoin.PoolCenter": {
+      "commandName": "Project",
+      "commandLineArgs": "-testnet test-in-supernode omnitNN2ZhHuqgSgPyyNJ2AhHYw7Ai5zFa3yqY pwd"
+    }
+  }
+}
