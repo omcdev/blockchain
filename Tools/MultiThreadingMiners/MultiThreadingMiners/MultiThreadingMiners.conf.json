@@ -1,6 +1,0 @@
-{
-  "MultiThreadingMinersSetting": {
-    "MySqlConnectString": "server=rm-3ns9338b87ln88635.mysql.rds.aliyuncs.com;port=3306;user=omnipool;password=F31P@y@2016;database=omnic_pool;SslMode=none;",
-    "PoolApiUrl": "http://192.168.0.37:12321"
-  }
-}
