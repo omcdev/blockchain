@@ -21,7 +21,8 @@ namespace OmniCoin.Consensus
         public const long DIFFICULTY_CALCULATE_LOGIC_ADJUST_HEIGHT = 34560;
         const long INIT_COINS = (long)2E+10;
         const long GENESIS_BLOCK_COINS = (long)1E+15;
-        const long BLOCK_REWARD_HALVE_STEP = 100000L;//5000000L;
+        //const long BLOCK_REWARD_HALVE_STEP = 100000L;//5000000L;
+        const long BLOCK_REWARD_HALVE_STEP_Fix = 250000L;
         // 线上 测试环境 302A300506032B657003210005BBDC1CDACDA89F154C95A9155F2DE7AD6A53789C703EBAF6C332D3CFA1529A
         // 本地 测试环境 302A300506032B65700321000ABEA52E23CC24229B83A08DC8789582363EF628B3B9C0DB2F0147D877BD4BA2
         const string SUPER_NODE_PUBLIC_KEY_TEST = "302A300506032B657003210005BBDC1CDACDA89F154C95A9155F2DE7AD6A53789C703EBAF6C332D3CFA1529A";
@@ -45,13 +46,38 @@ namespace OmniCoin.Consensus
         
         public static long GetNewBlockReward(long height)
         {
+            //if (height == 0)
+            //{
+            //    return GENESIS_BLOCK_COINS;
+            //}
+            //long times;
+            //if(height < 100000)
+            //{
+            //    return INIT_COINS;
+            //}else if (height >= 100000 && height < 350000)
+            //{
+            //    return INIT_COINS / 2;
+            //}
+            //times = height / BLOCK_REWARD_HALVE_STEP_Fix;
+            //return INIT_COINS / (int)(Math.Pow(2, times));
+
             if (height == 0)
             {
                 return GENESIS_BLOCK_COINS;
             }
+            else if (height < 100000)
+            {
+                return INIT_COINS;
+            }
+            else if (height < 350000)
+            {
+                return INIT_COINS / 2;
+            }
+            else
+            {
+                return INIT_COINS / 2 / (int)(Math.Pow(2, (1 + (height - 350000) / BLOCK_REWARD_HALVE_STEP_Fix)));
+            }
 
-            var times = height / BLOCK_REWARD_HALVE_STEP;
-            return INIT_COINS / (int)(Math.Pow(2, times));
         }
 
         public static NonceData GenerateNonceData(string walletAddress, long nonce)
