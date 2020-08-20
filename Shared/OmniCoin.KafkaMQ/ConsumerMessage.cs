@@ -1,4 +1,4 @@
-﻿using FiiiChain.Framework;
+﻿using OmniCoin.Framework;
 using RdKafka;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FiiiChain.KafkaMQ
+namespace OmniCoin.KafkaMQ
 {
     internal class ConsumerMessage
     {

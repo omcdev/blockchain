@@ -12,8 +12,8 @@
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>FiiiChain.MiningPool.Database</RootNamespace>
-    <AssemblyName>FiiiChain.MiningPool.Database</AssemblyName>
+    <RootNamespace>OmniCoin.MiningPool.Database</RootNamespace>
+    <AssemblyName>OmniCoin.MiningPool.Database</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -63,7 +63,6 @@
     <Build Include="Blocks.sql" />
     <Build Include="Miners.sql" />
     <Build Include="RewardList.sql" />
-    <Build Include="fiiipool_main_createtable_sql.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="HashRates.sql" />

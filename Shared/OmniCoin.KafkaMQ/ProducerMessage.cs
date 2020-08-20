@@ -1,10 +1,10 @@
-﻿using FiiiChain.Framework;
+﻿using OmniCoin.Framework;
 using RdKafka;
 using System;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FiiiChain.KafkaMQ
+namespace OmniCoin.KafkaMQ
 {
     internal class ProducerMessage
     {
@@ -12,6 +12,7 @@ namespace FiiiChain.KafkaMQ
         internal Producer Producer;
 
         private static ProducerMessage _instance;
+
         internal static ProducerMessage Instance
         {
             get
@@ -56,7 +57,7 @@ namespace FiiiChain.KafkaMQ
                 Instance.CreateTopic(topic);
                 Instance.Send(json);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 LogHelper.Error(ex.ToString());
             }

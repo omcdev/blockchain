@@ -1,8 +1,8 @@
-﻿using FiiiChain.Framework;
+﻿using OmniCoin.Framework;
 using System;
 using System.Collections.Generic;
 
-namespace FiiiChain.KafkaMQ
+namespace OmniCoin.KafkaMQ
 {
     public class MqManager
     {

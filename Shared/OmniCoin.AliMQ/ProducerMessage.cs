@@ -12,7 +12,7 @@ namespace OmniCoin.AliMQ
     {
         public ONSFactoryProperty factoryInfo;
         public static Action<string, T> ProducerMessageAction = PublishMessage;
-        Producer producer;
+        private Producer producer;
 
         public ProducerMessage()
         {
@@ -22,22 +22,21 @@ namespace OmniCoin.AliMQ
         public void Initialize(string topic, string producerId)
         {
             // AccessKey 阿里云身份验证，在阿里云服务器管理控制台创建
-            factoryInfo.setFactoryProperty(ONSFactoryProperty.AccessKey, "LTAI4y1K0vsy1d2j");
+            factoryInfo.setFactoryProperty(ONSFactoryProperty.AccessKey, "AccessKey");
             // SecretKey 阿里云身份验证，在阿里云服务器管理控制台创建
-            factoryInfo.setFactoryProperty(ONSFactoryProperty.SecretKey, "vjmgQbLwZbKCdbhjtlYgrfOhaAl9rA");
+            factoryInfo.setFactoryProperty(ONSFactoryProperty.SecretKey, "SecretKey");
             // 您在 MQ 控制台创建的 Producer ID
             factoryInfo.setFactoryProperty(ONSFactoryProperty.ProducerId, producerId);
             // 您在 MQ 控制台创建的 Topic
             factoryInfo.setFactoryProperty(ONSFactoryProperty.PublishTopics, topic);
             // 设置接入域名（此处以公共云生产环境为例）
-            factoryInfo.setFactoryProperty(ONSFactoryProperty.ONSAddr, "http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet");
+            factoryInfo.setFactoryProperty(ONSFactoryProperty.ONSAddr, "ONSAddr");
             // 设置日志路径
-            factoryInfo.setFactoryProperty(ONSFactoryProperty.LogPath, System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "mqlogs"));
+            factoryInfo.setFactoryProperty(ONSFactoryProperty.LogPath, System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "logs-dir"));
             //
             //factoryInfo.setFactoryProperty(ONSFactoryProperty.MessageModel, ONSFactoryProperty.BROADCASTING);
         }
 
-        
         public static void PublishMessage(string tag, T list)
         {
             ProducerMessage<T> producer = new ProducerMessage<T>();
@@ -110,6 +109,6 @@ namespace OmniCoin.AliMQ
             }
         }
 
-        #endregion
+        #endregion 发送普通消息
     }
 }
