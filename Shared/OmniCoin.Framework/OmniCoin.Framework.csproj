@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="log4net" Version="2.0.10" />
     <PackageReference Include="NSec.Cryptography" Version="18.5.0-preview3" />
     <PackageReference Include="SHA3.Net" Version="1.1.0" />
     <PackageReference Include="SimpleBase" Version="1.3.1" />
